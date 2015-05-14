@@ -16,18 +16,14 @@
 
 #include <stdio.h>
 
-//
-// canopy-cli cloudvar -c "out float32 temperature"
-// canopy-cli cloudvar -s temperature 54.3
-//
-
-int main(int argc, const char *argv[]) {
-    const char *cmd = argv[1];
-    if (argc <= 1 || !strcmp(cmd, "help")) {
-        cmd_help(argc, argv);
-    } else {
-        printf("canopy-cli: '%s' is not a command. See 'canopy-cli help'\n", 
-            cmd);
-    }
+int cmd_help(int argc, const char *argv[]) {
+    printf("usage: canopy-cli <command> [<args>]\n");
+    printf("\n");
+    printf("The most commonly used canopy-cli commands are:\n");
+    printf("    cloudvar    List, create, update, or delete cloud variable\n");
+    printf("    help        Show help\n");
+    printf("\n");
+    printf("See 'git help <command>' for more information on a specific command\n");
     return 0;
 }
+

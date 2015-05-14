@@ -12,22 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "canopy_cli_internal.h"
+#ifndef CANOPY_CLI_INTERNAL_INCLUDED
+#define CANOPY_CLI_INTERNAL_INCLUDED
 
-#include <stdio.h>
+int cmd_help(int argc, const char *argv[]);
 
-//
-// canopy-cli cloudvar -c "out float32 temperature"
-// canopy-cli cloudvar -s temperature 54.3
-//
 
-int main(int argc, const char *argv[]) {
-    const char *cmd = argv[1];
-    if (argc <= 1 || !strcmp(cmd, "help")) {
-        cmd_help(argc, argv);
-    } else {
-        printf("canopy-cli: '%s' is not a command. See 'canopy-cli help'\n", 
-            cmd);
-    }
-    return 0;
-}
+#endif
